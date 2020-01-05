@@ -23,7 +23,6 @@ final class Version20200104140214 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'sqlite', 'Migration can only be executed safely on \'sqlite\'.');
 
         $this->addSql('CREATE TABLE thank (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, text VARCHAR(255) NOT NULL)');
-        $this->addSql('CREATE TABLE want (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name VARCHAR(255) NOT NULL, about_price INTEGER DEFAULT NULL, purchase_status BOOLEAN NOT NULL)');
     }
 
     public function down(Schema $schema) : void
@@ -32,6 +31,5 @@ final class Version20200104140214 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'sqlite', 'Migration can only be executed safely on \'sqlite\'.');
 
         $this->addSql('DROP TABLE thank');
-        $this->addSql('DROP TABLE want');
     }
 }
