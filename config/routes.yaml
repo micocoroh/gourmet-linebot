@@ -1,7 +1,0 @@
-api_v1_want_list_index:
-  path: /api/v1/want_list
-  controller: App\Controller\V1\WantListController::index
-
-api_v1_thank_index:
-  path: /api/v1/thank
-  controller: App\Controller\V1\ThankController::index
