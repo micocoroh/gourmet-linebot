@@ -1,4 +1,5 @@
 <?php
+use App\Controller\V1\WantListController;
 use App\Controller\V1\ThankController;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
