@@ -1,0 +1,18 @@
+version: '3'
+services:
+  postgresql:
+   build:
+     context: ./docker/postgres
+     dockerfile: ./Dockerfile
+   container_name: postgres
+   ports:
+     - 5432:5432
+   volumes:
+     - ./postgres/init:/docker-entrypoint-initdb.d
+   environment:
+     POSTGRES_USER: root
+     POSTGRES_PASSWORD: secret
+     POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+   hostname: postgres
+   restart: always
+   user: root
