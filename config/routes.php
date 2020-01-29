@@ -22,6 +22,9 @@ return function (RoutingConfigurator $routes) {
         ->controller([ThankController::class, 'create'])
         ->methods(['POST']);
 
+    $routes->add('api_v1_line_bot', '/api/v1/line_bot')
+        ->controller([LineBotController::class, 'index']);
+
     // if the action is implemented as the __invoke() method of the
     // controller class, you can skip the ', method_name]' part:
     // ->controller([BlogController::class])
